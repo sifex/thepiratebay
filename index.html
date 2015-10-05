@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>The Pirate Bay</title>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,200' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/foundation.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/vendor/modernizr.js"></script>
+	<script src="js/vendor/jquery.js"></script>
+	<script>
+window.onpopstate = function(e){
+    if(e.state !== null) { // state data available
+        // load the page using state data
+        initiate_load_updated_page(e.state.ajax_string, window.history.state.security, 0);
+
+    } else { // no state data available
+        // load initial page which was there at first page load
+    }
+}
+	$(function() {
+		$("form").submit(function(e){
+			e.preventDefault();
+		});
+	});
+		setTimeout(function () {
+			$(function() {
+				$("body").addClass( "deployed" );
+				setTimeout(function () {
+					$("input#search").focus();
+				}, 900);
+				$("form").submit(function(e){
+					e.preventDefault();
+					history.pushState('data', '', '/search/' + $('input#search').val());
+					$("body").addClass( "searched" );
+					$("a#home").attr( "href", "/");
+				});
+			});
+		}, 900);
+	</script>
+</head>
+<body>
+	<div class="row ">
+		<div class="small-12 columns">
+			<a id="home"><div class="logo"></div></a>
+		</div>
+	</div>
+	<section class="search">
+		<div class="row fade">
+			<div class="small-12 small-centered columns">
+				<ul>
+					<li><a href="/">Search Torrents</a></li>
+					<li><a href="/browse.html">Browse Torrents</a></li>
+					<li><a href="https://thepiratebay.mn/recent">Recent Torrents</a></li>
+					<li><a href="https://thepiratebay.mn/tv/">TV Shows</a></li>
+					<li><a href="https://thepiratebay.mn/music">Music</a></li>
+					<li><a href="https://thepiratebay.mn/top">Top 100</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row searchfield fade">
+			<div class="small-12 columns">
+				<form name="q" action="search.html" method="GET">
+					<input name="q" id="search" maxlength="90" type="search" title="Pirate Search" placeholder="Pirate Search" class="small-12 medium-9 medium-centered columns" type="text">
+					<input type="submit" value="Pirate Search">
+				</form>
+			</div>
+		</div>
+		<div class="row how fade">
+			<a href="https://thepiratebay.mn/help">How do I download?</a>
+		</div>
+		<div class="row stats fade">
+			6.708.864 registered users Last updated 20:10:05.<br>
+			51.072.788 peers (39.675.223 seeders + 11.397.565 leechers) in 6.652.726 torrents.
+		</div>
+	</section>
+
+
+	<script src="js/foundation.min.js"></script>
+	<script>
+		$(document).foundation();
+	</script>
+</body>
+</html>
