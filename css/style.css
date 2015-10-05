@@ -212,6 +212,10 @@ section.search .row.how {
 section.search .row.how a {
 	color: rgb(166, 119, 86);
 }
+section.search .row.how span {
+	color: rgb(166, 119, 86);
+	padding: 0 20px;
+}
 section.search .row.stats {
 	color: #cfcbcb;
 	font-size: 10px;
