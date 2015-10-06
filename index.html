@@ -21,7 +21,6 @@ window.onpopstate = function(e){
 }
 	$(function() {
 		$("form").submit(function(e){
-			e.preventDefault();
 		});
 	});
 		setTimeout(function () {
@@ -31,8 +30,8 @@ window.onpopstate = function(e){
 					$("input#search").focus();
 				}, 900);
 				$("form").submit(function(e){
-					e.preventDefault();
-					history.pushState('data', '', '/search/' + $('input#search').val());
+
+					history.pushState('data', '', '/#search=' + $('input#search').val());
 					$("body").addClass( "searched" );
 					$("a#home").attr( "href", "/");
 				});
@@ -41,7 +40,7 @@ window.onpopstate = function(e){
 	</script>
 </head>
 <body>
-	<div class="row ">
+	<div class="row">
 		<div class="small-12 columns">
 			<a id="home"><div class="logo"></div></a>
 		</div>
@@ -61,7 +60,7 @@ window.onpopstate = function(e){
 		</div>
 		<div class="row searchfield fade">
 			<div class="small-12 columns">
-				<form name="q" action="search.html" method="GET">
+				<form name="q" action="http://thepiratebay.se/s/" method="GET">
 					<input name="q" id="search" maxlength="90" type="search" title="Pirate Search" placeholder="Pirate Search" class="small-12 medium-9 medium-centered columns" type="text">
 					<input type="submit" value="Pirate Search">
 				</form>
