@@ -33,42 +33,18 @@
 	<link rel="stylesheet" href="css/style.css" />
 	<script src="js/vendor/modernizr.js"></script>
 	<script src="js/vendor/jquery.js"></script>
-	<script>
-window.onpopstate = function(e){
-    if(e.state !== null) { // state data available
-        // load the page using state data
-        initiate_load_updated_page(e.state.ajax_string, window.history.state.security, 0);
-
-    } else { // no state data available
-        // load initial page which was there at first page load
-    }
-}
-	$(function() {
-		$("form").submit(function(e){
-		});
-	});
-		setTimeout(function () {
-			$(function() {
-				$("body").addClass( "deployed" );
-				setTimeout(function () {
-					$("input#search").focus();
-				}, 900);
-				$("form").submit(function(e){
-
-					history.pushState('data', '', '/#search=' + $('input#search').val());
-					$("body").addClass( "searched" );
-					$("a#home").attr( "href", "/");
-				});
-			});
-		}, 900);
-	</script>
+	<script src="js/init.js"></script>
 </head>
 <body>
-	<div class="row">
-		<div class="small-12 columns">
-			<a id="home"><div class="logo"></div></a>
+	<section class="grad">
+		<div class="row">
+			<div class="small-12 columns">
+				<a id="home"><div class="logo"></div></a>
+			</div>
 		</div>
-	</div>
+	</section>
+	
+
 	<section class="search">
 		<div class="row fade">
 			<div class="small-12 small-centered columns">
@@ -84,7 +60,7 @@ window.onpopstate = function(e){
 		</div>
 		<div class="row searchfield fade">
 			<div class="small-12 columns">
-				<form name="q" action="http://thepiratebay.se/s/" method="GET">
+				<form name="q" method="GET">
 					<input name="q" id="search" maxlength="90" type="search" title="Pirate Search" placeholder="Pirate Search" class="small-12 medium-9 medium-centered columns" type="text">
 					<input type="submit" value="Pirate Search">
 				</form>
@@ -97,8 +73,12 @@ window.onpopstate = function(e){
 			6.708.864 registered users Last updated 20:10:05.<br>
 			51.072.788 peers (39.675.223 seeders + 11.397.565 leechers) in 6.652.726 torrents.
 		</div>
-	</section>
 
+	
+		<div class="row">
+			<div class="results"></div>
+		</div>
+	</section>
 
 	<script src="js/foundation.min.js"></script>
 	<script>
