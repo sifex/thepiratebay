@@ -52,7 +52,7 @@ body.deployed .logo {
 	-o-transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); 
 	transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); /* custom */
 }
-body.deployed.no-anim .logo {
+body.no-anim .logo {
 	-webkit-transition: none;
 	-moz-transition: none;
 	-o-transition: none;
@@ -82,19 +82,16 @@ section.search {
 	-o-transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); 
 	transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); /* custom */
 }
-body:not(.deployed) .fade {
-	display: none;
-}
 body.deployed section.search {
 	top: calc(30vh + (461px/2) - 95px);
 	max-height: 10000px;
 	min-height: 320px;
 }
-body.deployed.no-anim section.search {
+body.no-anim section.search {
 	-webkit-transition: none;
 	-moz-transition: none;
 	-o-transition: none;
-	transition: none;/* custom */
+	transition: none; /* custom */
 }
 body.searched section.search {
 	top: 100px;
@@ -119,7 +116,6 @@ section.search .row.fade {
 	transition-delay: 0.35s;
 }
 body.deployed section.search .row.fade {
-	display: block;
 	opacity: 1;
 }
 section.search ul {
@@ -157,19 +153,26 @@ section.search li:last-child:after {
 }
 section.search .row.searchfield {
 	margin-top: 16px;
+	text-align: center;
 	vertical-align: middle;
-	-webkit-transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
-	-moz-transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
-	-o-transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
-	transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); /* custom */
+	-webkit-transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), opacity 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
+	-moz-transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), opacity 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
+	-o-transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), opacity 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
+	transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), opacity 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); /* custom */
 
 	-webkit-transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); 
 	-moz-transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); 
 	-o-transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); 
 	transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); /* custom */
+
+	-webkit-transition-delay: 0.35s; 
+	-moz-transition-delay: 0.35s; 
+	-o-transition-delay: 0.35s; 
+	transition-delay: 0.35s;
 }
 body.searched .row.searchfield {
-	margin-top: -130px;	
+	margin-top: -70px;
+	opacity: 1;
 }
 body.searched section.search input[type=search] {
 	border: solid 1px rgb(255, 255, 255);
@@ -179,7 +182,7 @@ body.searched section.search input[type=search] {
 body.searched section.search input[type=submit] {
 	border: solid 1.5px rgb(255, 255, 255);
 }
-body.searched section.search .row.fade:not(.searchfield) {
+body.searched section.search .row.fade {
 	opacity: 0;
 }
 section.search input {
@@ -250,9 +253,3 @@ section.search .row.stats {
 	font-size: 10px;
 	background: #FFF;
 }
-
-
-section.results {
-	z-index: 9999;
-}
-
