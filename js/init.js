@@ -35,14 +35,14 @@ $(function() {
 		$("body").addClass( "searched" );
 		$("a#home").attr( "href", "/");
 		setTimeout(function () {
-			$("body.deployed section.search .row.fade").addClass( "hide" );
+			$(".fade").addClass( "hide" );
 			$(".results").addClass( "fadeup" );
 		}, 900);
 	});
 });
 
 $(function() {
-	if(getCookie("deployTime") !== '0') {
+	if(getCookie("deployTime") !== '1') {
 
 		// Deploy
 		setCookie('deployTime', 1, 0.0002);
