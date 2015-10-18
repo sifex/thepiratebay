@@ -32,6 +32,10 @@ html, body {
 	-o-transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); 
 	transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); /* custom */
 }
+.postfix {
+	border:none;
+	height: auto;
+}
 body:not(.searched) a#home {
 	cursor: default;
 }	
@@ -84,6 +88,13 @@ section.search .row.fadeIn {
 	-moz-transition-delay: 0.35s; 
 	-o-transition-delay: 0.35s; 
 	transition-delay: 0.35s;
+}
+body.no-anim section.search .row.fadeIn {
+	opacity: 0;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;/* custom */
 }
 section.search ul {
 	text-align: center;
