@@ -14,14 +14,34 @@ html, body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b47f5a', endColorstr='#a37555',GradientType=0 );
 }
 .logo {
-	height: 461px;
+	height: 372px;
 	width: 100%;
 	background-image: url('../../../images/logo_2x.png');
-	background-size: 407px 461px;
+	background-size: 407px 372px;
 	background-repeat: no-repeat;
 	background-position: center top;
 	position: absolute;
-	top: calc(50vh - (461px/2) - 25px);
+	top: calc(50vh - (372px/2) - 25px);
+	-webkit-transition: height 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), top 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), width 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), background-size 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
+	-moz-transition: height 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), top 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), width 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), background-size 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
+	-o-transition: height 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), top 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), width 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), background-size 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
+	transition: height 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), top 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), width 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), background-size 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); /* custom */
+
+	-webkit-transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); 
+	-moz-transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); 
+	-o-transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); 
+	transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); /* custom */
+}
+.sublogo {
+	height: 59px;
+	width: 100%;
+	background-image: url('../../../images/logo_headline_2x.png');
+	background-size: 403px 59px;
+	background-repeat: no-repeat;
+	background-position: center top;
+	margin-top: 240px; 
+	position: absolute;
+	top: calc(50vh - (59px/2) - 25px);
 	-webkit-transition: height 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), top 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), width 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), background-size 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
 	-moz-transition: height 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), top 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), width 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), background-size 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
 	-o-transition: height 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), top 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), width 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), background-size 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
@@ -34,7 +54,7 @@ html, body {
 }
 .postfix {
 	border:none;
-	height: auto;
+	height: auto; 
 }
 body:not(.searched) a#home {
 	cursor: default;
@@ -221,7 +241,7 @@ section.search .row.stats {
 /* DEPLOYED */
 
 body.deployed .logo {
-	top: calc(30vh - (461px/2));
+	top: calc(30vh - (280px));
 	-webkit-transition: height 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), top 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), width 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), background-size 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
 	-moz-transition: height 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), top 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), width 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), background-size 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
 	-o-transition: height 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), top 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), width 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), background-size 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
@@ -232,6 +252,9 @@ body.deployed .logo {
 	-o-transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); 
 	transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); /* custom */
 }
+body.deployed .sublogo {
+	top: calc(30vh - (90px));
+}
 body.no-anim.deployed .logo {
 	-webkit-transition: none;
 	-moz-transition: none;
@@ -239,7 +262,7 @@ body.no-anim.deployed .logo {
 	transition: none;/* custom */
 }
 body.deployed section.search {
-	top: calc(30vh + (461px/2) - 95px);
+	top: calc(30vh + (372px/2) - 95px);
 	max-height: 10000px;
 	min-height: 320px;
 }
@@ -247,10 +270,10 @@ body.deployed section.search .row.fadeIn {
 	opacity: 1;
 }
 body.searched section.search .row {
-	-webkit-transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), opacity 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), color 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
-	-moz-transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), opacity 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), color 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
-	-o-transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), opacity 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), color 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
-	transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), opacity 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), color 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); /* custom */
+	-webkit-transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), padding 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), opacity 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), color 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
+	-moz-transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), padding 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), opacity 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), color 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
+	-o-transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), padding 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), opacity 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), color 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); 
+	transition: margin 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), padding 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), opacity 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000), color 1000ms cubic-bezier(0.440, 0.320, 0.070, 1.000); /* custom */
 
 	-webkit-transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); 
 	-moz-transition-timing-function: cubic-bezier(0.440, 0.320, 0.070, 1.000); 
@@ -264,9 +287,10 @@ body.searched section.search .row {
 body.searched .logo {
 	top: -10px;
 	height: 121px;
-	width: 113px;
-	background-size: 121px 137px;
+	width: 111px;
+	background-size: 121px 111px;
 	left: 0;
+	z-index: 1;
 }
 body.searched section.search {
 	top: 100px;
@@ -293,7 +317,11 @@ body.searched section.search input[type=search] {
 body.searched section.search input[type=submit] {
 	border: solid 1.5px rgb(255, 255, 255);
 }
-body.searched section.search .row.fade {
+body.searched section.grad .fade, body.searched section.search .row.fade {
 	opacity: 0;
 	height: 0;
+}
+body.searched section.search .searchpad {
+	padding-left: 175px;
+	padding-right: 0;
 }

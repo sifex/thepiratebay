@@ -42,7 +42,7 @@ $(function() {
 });
 
 $(function() {
-	if(getCookie("deployTime") !== '1') {
+	if(getCookie("deployTime") !== '0') {
 
 		// Deploy
 		setCookie('deployTime', 1, 0.0002);
