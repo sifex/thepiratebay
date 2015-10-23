@@ -42,6 +42,11 @@ $(function() {
 });
 
 $(function() {
+	$(".dark-mode-button").click(function() {
+		$("body").toggleClass( "dark" );
+		$(".dark-mode-button").toggleClass( "light" );
+	});
+
 	if(getCookie("deployTime") !== '0') {
 
 		// Deploy
@@ -63,3 +68,4 @@ $(function() {
 		$("input#search").focus();	
 	}
 });
+
