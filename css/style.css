@@ -1,10 +1,11 @@
 html, body {
 	font-family: 'Proxima Nova', sans-serif;
 	overflow-x: hidden;
+	transition: .2s -webkit-filter linear, .2s filter linear;
 }
 body.dark {
-	-webkit-filter: brightness(70%) grayscale(100%) contrast(170%);
-	filter: brightness(70%) grayscale(100%) contrast(170%);
+	-webkit-filter: brightness(70%) grayscale(100%) contrast(180%);
+	filter: brightness(70%) grayscale(100%) contrast(180%);
 }
 .dark-mode-button {
 	display: block;
